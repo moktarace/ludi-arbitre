@@ -1,10 +1,12 @@
-const CACHE_NAME = 'chrono-arbitre-v1';
+const CACHE_NAME = 'chrono-arbitre-v2';
 const urlsToCache = [
-  './',
-  './index.html',
-  './styles.css',
-  './app.js',
-  './manifest.json'
+  '/ludi-arbitre/',
+  '/ludi-arbitre/index.html',
+  '/ludi-arbitre/styles.css',
+  '/ludi-arbitre/app.js',
+  '/ludi-arbitre/manifest.json',
+  '/ludi-arbitre/icon-192.png',
+  '/ludi-arbitre/icon-512.png'
 ];
 
 // Installation du Service Worker
@@ -69,7 +71,7 @@ self.addEventListener('fetch', event => {
       .catch(() => {
         // En cas d'erreur, retourne la page index si c'est une navigation
         if (event.request.mode === 'navigate') {
-          return caches.match('./index.html');
+          return caches.match('/ludi-arbitre/index.html');
         }
       })
   );
