@@ -1,12 +1,11 @@
-const CACHE_NAME = 'chrono-arbitre-v2';
+const CACHE_NAME = 'chrono-arbitre-v3';
 const urlsToCache = [
   '/ludi-arbitre/',
   '/ludi-arbitre/index.html',
   '/ludi-arbitre/styles.css',
   '/ludi-arbitre/app.js',
   '/ludi-arbitre/manifest.json',
-  '/ludi-arbitre/icon-192.png',
-  '/ludi-arbitre/icon-512.png'
+  '/ludi-arbitre/icon.svg'
 ];
 
 // Installation du Service Worker
