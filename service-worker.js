@@ -1,4 +1,4 @@
-const CACHE_NAME = 'chrono-arbitre-v3';
+const CACHE_NAME = 'chrono-arbitre-v4';
 const urlsToCache = [
   '/ludi-arbitre/',
   '/ludi-arbitre/index.html',
@@ -15,7 +15,11 @@ self.addEventListener('install', event => {
     caches.open(CACHE_NAME)
       .then(cache => {
         console.log('Service Worker: Mise en cache des fichiers');
-        return cache.addAll(urlsToCache);
+        return cache.addAll(urlsToCache).catch(err => {
+          console.error('Erreur lors de la mise en cache:', err);
+          // Continuer même si certains fichiers échouent
+          return Promise.resolve();
+        });
       })
       .then(() => self.skipWaiting())
   );
@@ -40,6 +44,11 @@ self.addEventListener('activate', event => {
 
 // Interception des requêtes
 self.addEventListener('fetch', event => {
+  // Ignorer les requêtes non-http/https (comme chrome-extension://)
+  if (!event.request.url.startsWith('http')) {
+    return;
+  }
+  
   event.respondWith(
     caches.match(event.request)
       .then(response => {
@@ -58,11 +67,16 @@ self.addEventListener('fetch', event => {
           // Clone la réponse
           const responseToCache = response.clone();
           
-          // Ajoute au cache
-          caches.open(CACHE_NAME)
-            .then(cache => {
-              cache.put(event.request, responseToCache);
-            });
+          // Ajoute au cache (seulement pour les requêtes de notre app)
+          if (event.request.url.includes('/ludi-arbitre/')) {
+            caches.open(CACHE_NAME)
+              .then(cache => {
+                cache.put(event.request, responseToCache);
+              })
+              .catch(err => {
+                console.warn('Erreur mise en cache:', err);
+              });
+          }
           
           return response;
         });

@@ -461,7 +461,9 @@ function clearHistory() {
 // PWA - Service Worker
 if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
-        navigator.serviceWorker.register('./service-worker.js')
+        navigator.serviceWorker.register('/ludi-arbitre/service-worker.js', {
+            scope: '/ludi-arbitre/'
+        })
             .then(registration => {
                 console.log('Service Worker enregistré avec succès:', registration.scope);
             })
