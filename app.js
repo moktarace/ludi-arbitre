@@ -299,12 +299,15 @@ function checkTimeAlerts() {
     
     // Définir les moments clés pour les signes de main
     const alerts = [
-        { time: 180, pattern: [200, 100, 200, 100, 200], label: '3 minutes' },  // 3 doigts
-        { time: 120, pattern: [200, 100, 200], label: '2 minutes' },            // 2 doigts
-        { time: 60, pattern: [200], label: '1 minute' },                        // 1 doigt
-        { time: 30, pattern: [100, 50, 100], label: '30 secondes' },            // Signe spécial
-        { time: 10, pattern: [100, 50, 100, 50, 100], label: '10 secondes' },   // Alerte finale
-        { time: 5, pattern: [50, 50, 50, 50, 50], label: '5 secondes' }         // Alerte urgente
+        { time: 360, pattern: [200, 100, 200, 100, 200, 100, 200, 100, 200, 100, 200], label: '6 minutes' }, // 6 doigts
+        { time: 300, pattern: [200, 100, 200, 100, 200, 100, 200, 100, 200], label: '5 minutes' },  // 5 doigts
+        { time: 240, pattern: [200, 100, 200, 100, 200, 100, 200], label: '4 minutes' },            // 4 doigts
+        { time: 180, pattern: [200, 100, 200, 100, 200], label: '3 minutes' },                      // 3 doigts
+        { time: 120, pattern: [200, 100, 200], label: '2 minutes' },                                // 2 doigts
+        { time: 60, pattern: [200], label: '1 minute' },                                            // 1 doigt
+        { time: 30, pattern: [100, 50, 100], label: '30 secondes' },                                // Signe spécial
+        { time: 10, pattern: [100, 50, 100, 50, 100], label: '10 secondes' },                       // Alerte finale
+        { time: 5, pattern: [50, 50, 50, 50, 50], label: '5 secondes' }                             // Alerte urgente
     ];
     
     alerts.forEach(alert => {
