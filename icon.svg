@@ -1,0 +1,37 @@
+<svg width="512" height="512" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fond dégradé -->
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Fond arrondi -->
+  <rect width="512" height="512" rx="110" fill="url(#gradient)"/>
+  
+  <!-- Cercle extérieur du chrono -->
+  <circle cx="256" cy="256" r="180" fill="none" stroke="white" stroke-width="20" opacity="0.3"/>
+  
+  <!-- Cercle intérieur -->
+  <circle cx="256" cy="256" r="150" fill="rgba(255,255,255,0.1)"/>
+  
+  <!-- Aiguilles du chrono -->
+  <!-- Aiguille des minutes -->
+  <line x1="256" y1="256" x2="256" y2="140" stroke="white" stroke-width="16" stroke-linecap="round"/>
+  
+  <!-- Aiguille des secondes -->
+  <line x1="256" y1="256" x2="320" y2="256" stroke="white" stroke-width="12" stroke-linecap="round" opacity="0.8"/>
+  
+  <!-- Point central -->
+  <circle cx="256" cy="256" r="20" fill="white"/>
+  
+  <!-- Marques d'heures -->
+  <circle cx="256" cy="106" r="8" fill="white"/>
+  <circle cx="406" cy="256" r="8" fill="white"/>
+  <circle cx="256" cy="406" r="8" fill="white"/>
+  <circle cx="106" cy="256" r="8" fill="white"/>
+  
+  <!-- Emoji théâtre en bas -->
+  <text x="256" y="460" font-size="60" text-anchor="middle" fill="white">🎭</text>
+</svg>

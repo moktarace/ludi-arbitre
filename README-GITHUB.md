@@ -1,0 +1,175 @@
+# 🎭 Chrono Arbitre - Match d'Improvisation
+
+[![GitHub Pages](https://img.shields.io/badge/demo-live-success)](https://VOTRE-USERNAME.github.io/ludi-arbitre/)
+[![PWA](https://img.shields.io/badge/PWA-ready-blue)](https://web.dev/progressive-web-apps/)
+
+Application Progressive Web App (PWA) de chronomètre pour arbitres de matchs d'improvisation théâtrale.
+
+**🚀 [Démo en ligne](https://VOTRE-USERNAME.github.io/ludi-arbitre/)** *(remplacez par votre URL GitHub Pages)*
+
+![Chrono Arbitre Screenshot](https://via.placeholder.com/800x400/6366f1/ffffff?text=Chrono+Arbitre)
+
+---
+
+## 🎯 Fonctionnalités
+
+- **Catégories prédéfinies** : Longue (6min), Moyenne (4min), Courte (2min), Caucus (20s)
+- **Temps personnalisé** : Définissez votre propre durée
+- **Contrôles intuitifs** : Démarrer, Pause, Reset
+- **⏱️ Ajustement en direct** : Ajoutez ou retirez 1 minute pendant l'impro
+- **📳 Alertes vibrantes pour signes de main** : Vibrations aux moments clés (3min, 2min, 1min, 30s, 10s, 5s)
+- **🔒 Pas de mise en veille** : L'écran reste allumé pendant le chrono (Wake Lock API)
+- **Barre de progression visuelle** : Visualisation du temps restant
+- **Notifications visuelles** : Rappels à l'écran pour les signes de main
+- **Historique** : Sauvegarde automatique des 10 derniers chronos
+- **Design responsive** : Fonctionne sur mobile, tablette et ordinateur
+- **Thème sombre** : Interface adaptée pour une utilisation en salle
+- **📱 Installable** : Fonctionne comme une application native
+- **🌐 Mode hors ligne** : Disponible sans connexion Internet
+
+---
+
+## 🚀 Utilisation rapide
+
+### En ligne
+Visitez simplement : **[https://VOTRE-USERNAME.github.io/ludi-arbitre/](https://VOTRE-USERNAME.github.io/ludi-arbitre/)**
+
+### Installation locale
+```bash
+# Cloner le dépôt
+git clone https://github.com/VOTRE-USERNAME/ludi-arbitre.git
+cd ludi-arbitre
+
+# Lancer un serveur local
+python -m http.server 8000
+
+# Ouvrir dans le navigateur
+# http://localhost:8000
+```
+
+---
+
+## 📱 Installation (PWA)
+
+L'application est une Progressive Web App (PWA) installable :
+
+### Sur mobile (Android/iOS) :
+1. Ouvrez l'application dans votre navigateur
+2. Recherchez l'option "Ajouter à l'écran d'accueil" ou "Installer l'application"
+3. L'icône apparaîtra sur votre écran d'accueil
+4. L'app fonctionnera même hors ligne !
+
+### Sur ordinateur (Chrome/Edge) :
+1. Ouvrez l'application dans votre navigateur
+2. Cliquez sur le bouton d'installation dans la barre d'adresse (icône +)
+3. Ou cliquez sur le bouton "📱 Installer l'application" en bas de page
+4. L'app sera accessible depuis votre menu des applications
+
+### Mode hors ligne
+- Tous les fichiers sont mis en cache automatiquement
+- L'application fonctionne sans connexion Internet
+- Les données sont sauvegardées localement
+
+---
+
+## 📖 Guide d'utilisation
+
+1. **Sélectionnez une catégorie** : Cliquez sur l'un des boutons de catégorie ou choisissez "Personnalisé"
+2. **Démarrez le chrono** : Cliquez sur "▶ Démarrer"
+3. **Gérez le temps** : Utilisez "⏸ Pause" pour mettre en pause, "⟲ Reset" pour réinitialiser
+4. **Ajustez en direct** : Utilisez "➕ 1 min" ou "➖ 1 min" pour modifier le temps pendant l'impro
+5. **Recevez les alertes** : Votre appareil vibrera aux moments clés pour vous rappeler de faire les signes de main :
+   - **3 minutes** : 🖐️ 3 doigts
+   - **2 minutes** : ✌️ 2 doigts
+   - **1 minute** : ☝️ 1 doigt
+   - **30 secondes** : Signe spécial
+   - **10 secondes** : Dernière alerte
+   - **5 secondes** : Alerte finale
+6. **Pas de mise en veille** : L'écran reste allumé automatiquement pendant le chrono
+7. **Consultez l'historique** : Tous vos chronos sont automatiquement sauvegardés
+
+---
+
+## 🎨 Catégories d'improvisation
+
+- **Longue (6 minutes)** : Pour les improvisations longues et développées
+- **Moyenne (4 minutes)** : Durée standard pour la plupart des impros
+- **Courte (2 minutes)** : Impro rapide et dynamique
+- **Caucus (20 secondes)** : Temps de concertation entre joueurs
+- **Personnalisé** : Définissez votre propre durée
+
+---
+
+## 💾 Sauvegarde
+
+L'historique des chronos est automatiquement sauvegardé dans le navigateur (localStorage).
+Les données persistent même après fermeture du navigateur.
+
+---
+
+## 📳 Vibrations & Wake Lock
+
+### Vibrations
+L'application utilise l'API Vibration pour vous alerter aux moments clés :
+- Patterns de vibration différents selon le temps restant
+- Permet de faire les signes de main sans regarder l'écran
+- Peut être désactivé via l'option dédiée
+
+### Wake Lock (Pas de veille)
+- L'écran reste allumé pendant qu'un chrono est actif
+- Utilise l'API Screen Wake Lock
+- Se désactive automatiquement à la fin du chrono ou en pause
+
+---
+
+## 🛠️ Technologies
+
+- HTML5
+- CSS3 (Grid, Flexbox, Animations)
+- JavaScript Vanilla (ES6+)
+- Vibration API (alertes haptiques)
+- Screen Wake Lock API (empêcher la mise en veille)
+- LocalStorage API (sauvegarde de l'historique)
+- Service Worker (fonctionnement hors ligne)
+- Web App Manifest (installation PWA)
+
+---
+
+## 📱 Compatibilité
+
+- ✅ Chrome / Edge
+- ✅ Firefox
+- ✅ Safari
+- ✅ Navigateurs mobiles (iOS & Android)
+- ✅ Mode PWA installable
+- ✅ Fonctionnement hors ligne
+
+---
+
+## 🤝 Contribution
+
+Les contributions sont les bienvenues ! N'hésitez pas à :
+- 🐛 Signaler des bugs
+- 💡 Proposer de nouvelles fonctionnalités
+- 🔧 Soumettre des pull requests
+
+---
+
+## 📄 Licence
+
+Projet libre d'utilisation pour la communauté d'improvisation théâtrale.
+
+---
+
+## 🎪 Pour la communauté impro
+
+Créé avec ❤️ pour les arbitres et passionnés d'improvisation théâtrale !
+
+Si cette application vous est utile, n'hésitez pas à :
+- ⭐ Mettre une étoile sur GitHub
+- 🔗 Partager avec d'autres troupes d'impro
+- 💬 Donner votre feedback
+
+---
+
+**Bon match d'impro ! 🎭🎪**

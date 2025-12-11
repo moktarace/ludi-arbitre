@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chrono Arbitre - Match d'Impro</title>
+    
+    <!-- PWA Meta Tags -->
+    <meta name="description" content="Chronomètre pour arbitres de matchs d'improvisation théâtrale">
+    <meta name="theme-color" content="#6366f1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Chrono Arbitre">
+    
+    <!-- Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Icons -->
+    <link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>🎭 Chrono Arbitre</h1>
+            <p class="subtitle">Match d'Improvisation</p>
+        </header>
+
+        <main>
+            <!-- Section de sélection de catégorie -->
+            <section class="category-section">
+                <h2>Catégorie</h2>
+                <div class="category-buttons">
+                    <button class="category-btn" data-time="360">Longue (6min)</button>
+                    <button class="category-btn active" data-time="240">Moyenne (4min)</button>
+                    <button class="category-btn" data-time="120">Courte (2min)</button>
+                    <button class="category-btn" data-time="20">Caucus (20s)</button>
+                    <button class="category-btn custom-btn" data-time="custom">Personnalisé</button>
+                </div>
+                
+                <div class="custom-time-input" id="customTimeInput" style="display: none;">
+                    <label for="customMinutes">Minutes :</label>
+                    <input type="number" id="customMinutes" min="0" max="59" value="3">
+                    <label for="customSeconds">Secondes :</label>
+                    <input type="number" id="customSeconds" min="0" max="59" value="0">
+                    <button id="setCustomTime" class="btn-primary">Valider</button>
+                </div>
+            </section>
+
+            <!-- Affichage du chrono -->
+            <section class="timer-section">
+                <div class="timer-display" id="timerDisplay">04:00</div>
+                <div class="timer-controls">
+                    <button id="startBtn" class="btn-control btn-start">▶ Démarrer</button>
+                    <button id="pauseBtn" class="btn-control btn-pause" disabled>⏸ Pause</button>
+                    <button id="resetBtn" class="btn-control btn-reset">⟲ Reset</button>
+                </div>
+                <div class="time-adjust-controls" id="timeAdjustControls" style="display: none;">
+                    <button id="removeMinuteBtn" class="btn-adjust btn-remove">➖ 1 min</button>
+                    <button id="addMinuteBtn" class="btn-adjust btn-add">➕ 1 min</button>
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+            </section>
+
+            <!-- Options supplémentaires -->
+            <section class="options-section">
+                <div class="option-item">
+                    <label for="vibrationToggle">
+                        <input type="checkbox" id="vibrationToggle" checked>
+                        📳 Vibrations pour signes de main
+                    </label>
+                </div>
+                <div class="info-item">
+                    <p>✋ L'appareil vibrera aux moments clés :</p>
+                    <ul>
+                        <li>3 minutes (🖐️ 3 doigts)</li>
+                        <li>2 minutes (✌️ 2 doigts)</li>
+                        <li>1 minute (☝️ 1 doigt)</li>
+                        <li>30 secondes</li>
+                        <li>10 secondes</li>
+                        <li>5 secondes</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Historique -->
+            <section class="history-section">
+                <div class="history-header">
+                    <h2>Historique</h2>
+                    <button id="clearHistory" class="btn-clear">Effacer</button>
+                </div>
+                <div id="historyList" class="history-list">
+                    <p class="empty-history">Aucun chrono enregistré</p>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2025 Chrono Arbitre - Pour les passionnés d'impro 🎪</p>
+            <p id="installPrompt" style="display: none; margin-top: 12px;">
+                <button id="installBtn" class="btn-primary">📱 Installer l'application</button>
+            </p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
